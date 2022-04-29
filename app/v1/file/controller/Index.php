@@ -43,8 +43,6 @@ class Index
         $hash = $file->hash('md5');
         // 判断附件格式是否符合
         $file_name = $file->getFilename();
-
-
         if ($file_exists = AttachmentModel::find(['token' => $token, 'md5' => $file->hash('md5')])) {
             $sav = ($full ? $proc['url'] . '/' : '') . $file_exists['path'];
             // 附件已存在
@@ -58,18 +56,19 @@ class Index
             $this->fail($file->getError());
             return;
         }
-        $info = $file->move('./upload/' . $this->token);
-        $fileName = $file->getPathname();
+        $savePath = date('Ymd', time());
+
+        $info = $file->move('./upload/' . $this->token . "/" . $savePath, $hash . "." . $file->getOriginalExtension());
+        $fileName = $info->getPathname();
         $file_info = [
             'token' => $token,
             'name' => $file->getFilename(),
-            'mime' => $file->getType(),
-            'path' => $file->getPathname(),
-            'ext' => $file->getExtension(),
-            'size' => $file->getSize(),
-            'md5' => $info->hash('md5'),
+            'mime' => $file->getOriginalMime(),
+            'path' => $info->getPathname(),
+            'ext' => $file->getOriginalExtension(),
+            'size' => $info->getSize(),
+            'md5' => $info->md5(),
         ];
-
         if ($proc["type"] == "local" || $proc["type"] == "all") {
             if ($proc['main_type'] == 'local') {
                 $sav = ($full ? $proc['url'] . '/' : '') . $fileName;
