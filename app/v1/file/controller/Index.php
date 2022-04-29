@@ -4,8 +4,8 @@ namespace app\v1\file\controller;
 
 
 use app\BaseController;
-use app\index\model\AttachmentModel;
-use app\index\model\ProjectModel;
+use app\v1\file\model\AttachmentModel;
+use app\v1\file\model\ProjectModel;
 use SendFile\SendFile;
 use think\Request;
 
