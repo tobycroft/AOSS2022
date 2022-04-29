@@ -40,7 +40,6 @@ class index
         if (!$file) {
             \Ret::fail('file字段没有用文件提交');
         }
-        $name = $file->getOriginalName();
         $hash = $file->hash('md5');
         // 判断附件格式是否符合
         $file_name = $file->getFilename();
@@ -63,7 +62,7 @@ class index
         $fileName = $this->token . "/" . $savePath . "/" . $info->getFilename();
         $file_info = [
             'token' => $token,
-            'name' => $name,
+            'name' => $file->getOriginalName(),
             'mime' => $file->getOriginalMime(),
             'path' => $fileName,
             'ext' => $file->getOriginalExtension(),
