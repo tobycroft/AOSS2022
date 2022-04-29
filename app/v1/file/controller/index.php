@@ -9,7 +9,7 @@ use SendFile\SendFile;
 use think\facade\Validate;
 use think\Request;
 
-class Index
+class index
 {
 
     public $token;

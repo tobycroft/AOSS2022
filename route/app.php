@@ -14,8 +14,8 @@ use think\facade\Route;
 Route::any(':version/:module/:controller/:function', '\app\:version\:module\controller\:controller@:function');
 
 
-Route::any('up', '\app\v1\file\controller\Index@up');
-Route::any('upfull', '\app\v1\file\controller\Index@upfull');
+Route::any('up', '\app\v1\file\controller\index@up');
+Route::any('upfull', '\app\v1\file\controller\index@upfull');
 
 Route::any(':any', function () {
     return \think\facade\Request::url();
