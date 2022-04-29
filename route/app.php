@@ -11,7 +11,7 @@
 use think\facade\Route;
 
 
-Route::any(':version/:module/:controller/:function', '\app\:version\:module\controller\:controller@:function');
+Route::any(':version/:module/:controller/:function', '\app\:version\:module\controller@:controller@:function');
 
 
 Route::any(':action', '\app\v1\file\controller\Index@:action');
