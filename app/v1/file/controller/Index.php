@@ -8,8 +8,9 @@ use app\v1\file\model\AttachmentModel;
 use app\v1\file\model\ProjectModel;
 use SendFile\SendFile;
 use think\Request;
+use think\route\dispatch\Controller;
 
-class Index extends BaseController
+class Index extends Controller
 {
 
     public $token;
