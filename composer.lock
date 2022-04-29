@@ -1,20 +1,20 @@
 {
-    "_readme": [
-        "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
-        "This file is @generated automatically"
-    ],
-    "content-hash": "972d5f37c97d6a688bc084d56a25d074",
-    "packages": [
-        {
-            "name": "league/flysystem",
-            "version": "1.1.9",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "094defdb4a7001845300334e7c1ee2335925ef99"
-            },
-            "dist": {
+  "_readme": [
+    "This file locks the dependencies of your project to a known state",
+    "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+    "This file is @generated automatically"
+  ],
+  "content-hash": "fe1cfcff8fea62fd823be6949dbaf96d",
+  "packages": [
+    {
+      "name": "league/flysystem",
+      "version": "1.1.9",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/thephpleague/flysystem.git",
+        "reference": "094defdb4a7001845300334e7c1ee2335925ef99"
+      },
+      "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/094defdb4a7001845300334e7c1ee2335925ef99",
                 "reference": "094defdb4a7001845300334e7c1ee2335925ef99",
@@ -1113,7 +1113,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=7.2.5"
+      "php": ">=8.0.0"
     },
     "platform-dev": [],
     "plugin-api-version": "2.3.0"

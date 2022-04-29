@@ -6,7 +6,7 @@ namespace app\v1\file\controller;
 use app\v1\file\model\AttachmentModel;
 use app\v1\file\model\ProjectModel;
 use SendFile\SendFile;
-use think\facade\Db;
+use think\facade\Validate;
 use think\Request;
 
 class Index
@@ -45,24 +45,28 @@ class Index
         $file_name = $file->getFilename();
 
 
-        if ($file_exists = AttachmentModel::get(['token' => $token, 'md5' => $file->hash('md5')])) {
+        if ($file_exists = AttachmentModel::find(['token' => $token, 'md5' => $file->hash('md5')])) {
             $sav = ($full ? $proc['url'] . '/' : '') . $file_exists['path'];
             // 附件已存在
             return $this->succ($sav);
         }
-        $info = $file->validate(['size' => (float)$proc['size'] * 1024, 'ext' => $proc['ext']])->move('./upload/' . $this->token);
-        if (!$info) {
+        if (Validate::fileExt($file, ['ext' => $proc['ext']])) {
             $this->fail($file->getError());
             return;
         }
-        $fileName = $proc['name'] . '/' . $info->getSaveName();
+        if (Validate::fileSize($file, ['size' => (float)$proc['size'] * 1024])) {
+            $this->fail($file->getError());
+            return;
+        }
+        $info = $file->move('./upload/' . $this->token);
+        $fileName = $file->getPathname();
         $file_info = [
             'token' => $token,
             'name' => $file->getFilename(),
             'mime' => $file->getType(),
-            'path' => $fileName,
-            'ext' => $info->getExtension(),
-            'size' => $info->getSize(),
+            'path' => $file->getPathname(),
+            'ext' => $file->getExtension(),
+            'size' => $file->getSize(),
             'md5' => $info->hash('md5'),
         ];
 
@@ -71,6 +75,7 @@ class Index
                 $sav = ($full ? $proc['url'] . '/' : '') . $fileName;
             }
         }
+
         if ($proc["type"] == "remote" || $proc["type"] == "all") {
             $sf = new SendFile();
             $ret = $sf->send('http://' . $proc["endpoint"] . '/up?token=' . $proc["bucket"], realpath('./upload/' . $fileName), $file->getType(), $file->getFilename());
@@ -172,7 +177,7 @@ class Index
             }
             $md5 = md5_file($file_path);
 
-            if ($file_exists = AttachmentModel::get(['md5' => $md5])) {
+            if ($file_exists = AttachmentModel::find(['md5' => $md5])) {
                 $sav = ($full ? $proc['url'] . '/' : '') . $file_exists['path'];
                 // 附件已存在
                 return $this->succ($sav);

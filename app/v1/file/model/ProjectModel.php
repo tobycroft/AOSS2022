@@ -34,7 +34,7 @@ class ProjectModel extends Db
             ['status', "=", 1],
         ];
         $db->where($where);
-        return $db->find()->toArray();
+        return $db->find();
 
     }
 
