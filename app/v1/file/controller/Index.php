@@ -31,6 +31,7 @@ class Index
     {
         $token = $this->token;
         $proc = ProjectModel::api_find_token($token);
+        print_r($proc);
         if (!$proc) {
             $this->fail('项目不可用');
         }
