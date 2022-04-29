@@ -42,7 +42,7 @@ class Index extends BaseController
         }
         $hash = $file->hash('md5');
         // 判断附件格式是否符合
-        $file_name = $file->getInfo('name');
+        $file_name = $file->getFileInfo('name');
 
 
         if ($file_exists = AttachmentModel::get(['token' => $token, 'md5' => $file->hash('md5')])) {
@@ -58,8 +58,8 @@ class Index extends BaseController
         $fileName = $proc['name'] . '/' . $info->getSaveName();
         $file_info = [
             'token' => $token,
-            'name' => $file->getInfo('name'),
-            'mime' => $file->getInfo('type'),
+            'name' => $file->getFileInfo('name'),
+            'mime' => $file->getFileInfo('type'),
             'path' => $fileName,
             'ext' => $info->getExtension(),
             'size' => $info->getSize(),
@@ -73,7 +73,7 @@ class Index extends BaseController
         }
         if ($proc["type"] == "remote" || $proc["type"] == "all") {
             $sf = new SendFile();
-            $ret = $sf->send('http://' . $proc["endpoint"] . '/up?token=' . $proc["bucket"], realpath('./upload/' . $fileName), $file->getInfo('type'), $file->getInfo('name'));
+            $ret = $sf->send('http://' . $proc["endpoint"] . '/up?token=' . $proc["bucket"], realpath('./upload/' . $fileName), $file->getFileInfo('type'), $file->getFileInfo('name'));
             $json = json_decode($ret, 1);
             $sav = ($full ? $proc['url'] . '/' : '') . $json["data"];
         }
