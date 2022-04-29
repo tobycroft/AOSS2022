@@ -62,7 +62,7 @@ class index
         $fileName = $this->token . "/" . $savePath . "/" . $info->getFilename();
         $file_info = [
             'token' => $token,
-            'name' => $file->getFilename(),
+            'name' => $info->getFilename(),
             'mime' => $file->getOriginalMime(),
             'path' => $fileName,
             'ext' => $file->getOriginalExtension(),
