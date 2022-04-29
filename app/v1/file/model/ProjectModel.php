@@ -9,12 +9,11 @@
 namespace app\v1\file\model;
 
 use think\facade\Db;
-use think\Model;
 
-class ProjectModel extends Model
+class ProjectModel extends Db
 {
 
-    protected $table = 'ao_project';
+    protected static $table = 'ao_project';
 
     public static function api_find($id)
     {
