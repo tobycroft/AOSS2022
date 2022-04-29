@@ -48,11 +48,11 @@ class Index
             // 附件已存在
             return $this->succ($sav);
         }
-        if (Validate::fileExt($file, ['ext' => $proc['ext']])) {
+        if (!Validate::fileExt($file, $proc['ext'])) {
             $this->fail($file->getError());
             return;
         }
-        if (Validate::fileSize($file, ['size' => (float)$proc['size'] * 1024])) {
+        if (!Validate::fileSize($file, (float)$proc['size'] * 1024)) {
             $this->fail($file->getError());
             return;
         }
