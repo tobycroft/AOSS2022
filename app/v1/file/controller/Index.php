@@ -49,11 +49,11 @@ class Index
             return $this->succ($sav);
         }
         if (!Validate::fileExt($file, $proc['ext'])) {
-            $this->fail($file->getError());
+            $this->fail("ext not allow");
             return;
         }
         if (!Validate::fileSize($file, (float)$proc['size'] * 1024)) {
-            $this->fail($file->getError());
+            $this->fail("size too big");
             return;
         }
         $savePath = date('Ymd', time());
