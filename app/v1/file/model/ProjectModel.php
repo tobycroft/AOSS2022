@@ -18,8 +18,7 @@ class ProjectModel extends Db
 
     public static function api_find($id)
     {
-
-        $db = self::table(self::$table);
+        $db = Db::table(self::$table);
         $where = [
             'id' => $id,
         ];
@@ -29,13 +28,14 @@ class ProjectModel extends Db
 
     public static function api_find_token($token)
     {
-        $db = self::table(self::$table);
+        $db = Db::table(self::$table);
         $where = [
-            'token' => $token,
-            'status' => 1,
+            ['token', "=", $token],
+            ['status', "=", 1],
         ];
         $db->where($where);
-        return $db->find();
+        return $db->find()->toArray();
+
     }
 
 

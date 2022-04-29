@@ -6,6 +6,7 @@ namespace app\v1\file\controller;
 use app\v1\file\model\AttachmentModel;
 use app\v1\file\model\ProjectModel;
 use SendFile\SendFile;
+use think\facade\Db;
 use think\Request;
 
 class Index
