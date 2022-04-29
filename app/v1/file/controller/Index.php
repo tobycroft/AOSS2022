@@ -30,7 +30,7 @@ class Index
     public function upload_file(Request $request, $full = 0, $ue = 0)
     {
         $token = $this->token;
-        $proc = ProjectModel::api_find_token($token);
+        $proc = ProjectModel::api_select($token);
         print_r($proc);
         exit();
         if (!$proc) {

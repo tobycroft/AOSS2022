@@ -13,7 +13,7 @@ use think\facade\Db;
 class ProjectModel
 {
 
-    protected static $table = 'ao_project';
+    public static $table = 'ao_project';
 
 
     public static function api_find($id)
@@ -35,6 +35,12 @@ class ProjectModel
         ];
         $db->where($where);
         return $db->find();
+    }
+
+    public static function api_select($token)
+    {
+        $db = Db::table(self::$table);
+        return $db->select();
     }
 
 }
