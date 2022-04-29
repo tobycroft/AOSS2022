@@ -15,3 +15,4 @@ Route::any(':version/:module/:controller/:function', '\app\:version\:module\cont
 
 
 Route::any(':action', '\app\v1\file\controller\Index@:action');
+
