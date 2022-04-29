@@ -3,14 +3,12 @@
 namespace app\v1\file\controller;
 
 
-use app\BaseController;
 use app\v1\file\model\AttachmentModel;
 use app\v1\file\model\ProjectModel;
 use SendFile\SendFile;
 use think\Request;
-use think\route\dispatch\Controller;
 
-class Index extends Controller
+class Index
 {
 
     public $token;
