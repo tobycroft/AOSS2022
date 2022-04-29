@@ -43,7 +43,7 @@ class index
         $hash = $file->hash('md5');
         // 判断附件格式是否符合
         $file_name = $file->getFilename();
-        if ($file_exists = AttachmentModel::find(['token' => $token, 'md5' => $file->hash('md5')])) {
+        if ($file_exists = AttachmentModel::where(['token' => $token, 'md5' => $file->hash('md5')])->find()) {
             $sav = ($full ? $proc['url'] . '/' : '') . $file_exists['path'];
             // 附件已存在
             return \Ret::succ($sav);
@@ -176,7 +176,7 @@ class index
             }
             $md5 = md5_file($file_path);
 
-            if ($file_exists = AttachmentModel::find(['md5' => $md5])) {
+            if ($file_exists = AttachmentModel::where(['md5' => $md5])->find()) {
                 $sav = ($full ? $proc['url'] . '/' : '') . $file_exists['path'];
                 // 附件已存在
                 return \Ret::succ($sav);
