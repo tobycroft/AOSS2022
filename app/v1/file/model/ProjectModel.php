@@ -10,7 +10,7 @@ namespace app\v1\file\model;
 
 use think\facade\Db;
 
-class ProjectModel
+class ProjectModel extends Db
 {
 
     public static $table = 'ao_project';
@@ -18,7 +18,8 @@ class ProjectModel
 
     public static function api_find($id)
     {
-        $db = Db::table(self::$table);
+
+        $db = self::table(self::$table);
         $where = [
             'id' => $id,
         ];
@@ -28,7 +29,7 @@ class ProjectModel
 
     public static function api_find_token($token)
     {
-        $db = Db::table(self::$table);
+        $db = self::table(self::$table);
         $where = [
             'token' => $token,
             'status' => 1,
