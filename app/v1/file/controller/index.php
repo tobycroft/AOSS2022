@@ -58,7 +58,7 @@ class index
         }
         $savePath = date('Ymd', time());
 
-        $info = $file->move('./upload/' . $this->token . "/" . $savePath, $hash . "." . $file->getOriginalExtension());
+        $info = $file->move('upload/' . $this->token . "/" . $savePath, $hash . "." . $file->getOriginalExtension());
         $fileName = $info->getPathname();
         $file_info = [
             'token' => $token,
@@ -77,7 +77,7 @@ class index
 
         if ($proc["type"] == "remote" || $proc["type"] == "all") {
             $sf = new SendFile();
-            $ret = $sf->send('http://' . $proc["endpoint"] . '/up?token=' . $proc["bucket"], realpath('./upload/' . $fileName), $file->getType(), $file->getFilename());
+            $ret = $sf->send('http://' . $proc["endpoint"] . '/up?token=' . $proc["bucket"], realpath('upload/' . $fileName), $file->getType(), $file->getFilename());
             $json = json_decode($ret, 1);
             $sav = ($full ? $proc['url'] . '/' : '') . $json["data"];
         }
