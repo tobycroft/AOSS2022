@@ -59,7 +59,7 @@ class index
         $savePath = date('Ymd', time());
 
         $info = $file->move('upload/' . $this->token . "/" . $savePath, $hash . "." . $file->getOriginalExtension());
-        $fileName = $info->getPathname();
+        $fileName = $this->token . "/" . $savePath . $hash . "." . $info->getFilename();
         $file_info = [
             'token' => $token,
             'name' => $file->getFilename(),
