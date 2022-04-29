@@ -7,7 +7,7 @@ use PhpOffice\PhpSpreadsheet\IOFactory;
 use think\facade\Request;
 use think\facade\Validate;
 
-class Index
+class index
 {
 
     public $token;
