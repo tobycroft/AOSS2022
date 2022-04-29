@@ -23,14 +23,38 @@ class Index
             \Ret::fail("ext not allow");
             return;
         }
-        if (!Validate::fileSize($file, (float)4 * 1024)) {
+        if (!Validate::fileSize($file, (float)8192 * 1024)) {
             \Ret::fail("size too big");
             return;
         }
 
-        $info = $file->move('./upload/' . $this->token, $hash . "." . $file->getOriginalExtension());
+        $info = $file->move('./upload/excel', $hash . "." . $file->getOriginalExtension());
         $reader = IOFactory::load($info->getPathname());
-
+        unlink($info->getPathname());
+        $datas = $reader->getActiveSheet()->toArray();
+        if (count($datas) < 2) {
+            \Ret::fail("表格长度不足");
+            return;
+        }
+        $value = [];
+        $i = 0;
+        $keys = $datas[0];
+        foreach ($keys as $key) {
+            if (empty($key)) {
+                \Ret::fail("表格长度不一");
+                return;
+            }
+        }
+        $count_column = count($keys);
+        $colums = [];
+        for ($i = 1; $i < count($datas); $i++) {
+            $line = $datas[$i];
+            for ($s = 0; $s < $count_column; $s++) {
+                $arr[$keys[$s]] = $line[$s];
+            }
+            $colums[] = $arr;
+        }
+        echo json_encode($colums);
     }
 
 }
