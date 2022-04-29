@@ -37,10 +37,5 @@ class ProjectModel
         return $db->find();
     }
 
-    public static function api_select($token)
-    {
-        $db = Db::table(self::$table);
-        return $db->select();
-    }
 
 }

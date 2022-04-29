@@ -13,7 +13,7 @@ class Index
 
     public $token;
 
-    public function initialize()
+    public function __construct()
     {
         header('Access-Control-Allow-Origin:*');
         $this->token = input('get.token');
@@ -30,9 +30,7 @@ class Index
     public function upload_file(Request $request, $full = 0, $ue = 0)
     {
         $token = $this->token;
-        $proc = ProjectModel::api_select($token);
-        print_r($proc);
-        exit();
+        $proc = ProjectModel::api_find_token($token);
         if (!$proc) {
             $this->fail('项目不可用');
         }
