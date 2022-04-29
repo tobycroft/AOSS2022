@@ -64,7 +64,7 @@ class index
             'token' => $token,
             'name' => $file->getFilename(),
             'mime' => $file->getOriginalMime(),
-            'path' => $info->getPathname(),
+            'path' => $fileName,
             'ext' => $file->getOriginalExtension(),
             'size' => $info->getSize(),
             'md5' => $info->md5(),
