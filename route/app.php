@@ -14,5 +14,13 @@ use think\facade\Route;
 Route::any(':version/:module/:controller/:function', '\app\:version\:module\controller\:controller@:function');
 
 
-Route::any(':action', '\app\v1\file\controller\Index@:action');
+Route::any('up', '\app\v1\file\controller\Index@up');
+Route::any('upfull', '\app\v1\file\controller\Index@upfull');
 
+Route::any(':any', function () {
+    return \think\facade\Request::url();
+});
+
+Route::any('', function () {
+    return \think\facade\Request::url();
+});
