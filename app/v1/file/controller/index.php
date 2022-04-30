@@ -56,6 +56,7 @@ class index
             \Ret::fail("size too big");
             return;
         }
+
         $savePath = date('Ymd', time());
 
         $info = $file->move('upload/' . $this->token . "/" . $savePath, $hash . "." . $file->getOriginalExtension());
