@@ -6,7 +6,7 @@
  * and open the template in the editor.
  */
 
-namespace app\v1\file\model;
+namespace app\v1\project\model;
 
 use think\facade\Db;
 
