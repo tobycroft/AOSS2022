@@ -3,6 +3,7 @@
 namespace app\v1\excel\controller;
 
 
+use app\v1\project\model\ProjectModel;
 use PhpOffice\PhpSpreadsheet\IOFactory;
 use think\facade\Request;
 use think\facade\Validate;
@@ -12,8 +13,22 @@ class index
 
     public $token;
 
+    public function __construct()
+    {
+        header('Access-Control-Allow-Origin:*');
+        $this->token = input('get.token');
+        if (!$this->token) {
+            \Ret::fail('token');
+        }
+    }
+
     public function index()
     {
+        $token = $this->token;
+        $proc = ProjectModel::api_find_token($token);
+        if (!$proc) {
+            \Ret::fail('项目不可用');
+        }
         $file = Request::file("file");
         if (!$file) {
             \Ret::fail('file字段没有用文件提交');
