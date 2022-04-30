@@ -19,7 +19,6 @@ class index
         $this->token = input('get.token');
         if (!$this->token) {
             \Ret::fail('token');
-            return;
         }
     }
 
