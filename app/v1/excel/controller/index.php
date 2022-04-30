@@ -28,10 +28,12 @@ class index
         $proc = ProjectModel::api_find_token($token);
         if (!$proc) {
             \Ret::fail('项目不可用');
+            return;
         }
         $file = Request::file("file");
         if (!$file) {
             \Ret::fail('file字段没有用文件提交');
+            return;
         }
         $hash = $file->hash('md5');
         if (!Validate::fileExt($file, ["xls", "xlsx"])) {
