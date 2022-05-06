@@ -72,7 +72,7 @@ class index
         for ($i = 1; $i < count($datas); $i++) {
             $line = $datas[$i];
             for ($s = 0; $s < $count_column; $s++) {
-                $arr[$keys[$s]] = $line[$s];
+                $arr[$keys[$s]] = $line[$s] ?: "";
             }
             $colums[] = $arr;
         }
