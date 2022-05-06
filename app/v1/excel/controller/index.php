@@ -55,7 +55,12 @@ class index
         }
         $value = [];
         $i = 0;
-        $keys = $datas[0];
+        $keys = [];
+        foreach ($datas[0] as $data) {
+            if (!empty($data)) {
+                $keys[] = $data;
+            }
+        }
         foreach ($keys as $key) {
             if (empty($key)) {
                 \Ret::fail("表格长度不一");
