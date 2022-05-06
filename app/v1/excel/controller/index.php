@@ -105,7 +105,12 @@ class index
             \Ret::fail("表格长度不足");
             return;
         }
-        $keys = $datas[0];
+        $keys = [];
+        foreach ($datas[0] as $data) {
+            if (!empty($data)) {
+                $keys[] = $data;
+            }
+        }
         $count_column = count($keys);
         $colums = [];
         for ($i = 1; $i < count($datas); $i++) {
