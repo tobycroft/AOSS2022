@@ -127,7 +127,7 @@ class index
                 continue;
             }
             for ($s = 0; $s < $count_column; $s++) {
-                $arr[$keys[$s]] = $line[$s];
+                $arr[$keys[$s]] = $line[$s] ?: "";
             }
             $colums[] = $arr;
         }
