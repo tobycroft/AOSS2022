@@ -17,6 +17,7 @@ class AppService extends Service
 
     public function boot()
     {
+        header("Access-Control-Allow-Origin:*", true);
         // 服务启动
     }
 }
