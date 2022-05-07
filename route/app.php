@@ -11,16 +11,16 @@
 use think\facade\Route;
 
 
-Route::any(':version/:module/:controller/:function', '\app\:version\:module\controller\:controller@:function');
+Route::any(':version/:module/:controller/:function', '\app\:version\:module\controller\:controller@:function')->allowCrossDomain();
 
 
-Route::any('up', '\app\v1\file\controller\index@up');
-Route::any('upfull', '\app\v1\file\controller\index@upfull');
+Route::any('up', '\app\v1\file\controller\index@up')->allowCrossDomain();
+Route::any('upfull', '\app\v1\file\controller\index@upfull')->allowCrossDomain();
 
 Route::any(':any', function () {
     return \think\facade\Request::url();
-});
+})->allowCrossDomain();
 
 Route::any('', function () {
     return \think\facade\Request::url();
-});
+})->allowCrossDomain();
