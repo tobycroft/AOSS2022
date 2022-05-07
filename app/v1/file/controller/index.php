@@ -16,6 +16,7 @@ class index
 
     public function __construct()
     {
+        header("Access-Control-Allow-Origin:*", true);
         $this->token = input('get.token');
         if (!$this->token) {
             \Ret::fail('token');
