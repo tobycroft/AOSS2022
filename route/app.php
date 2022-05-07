@@ -11,16 +11,31 @@
 use think\facade\Route;
 
 
-Route::any(':version/:module/:controller/:function', '\app\:version\:module\controller\:controller@:function')->allowCrossDomain();
+Route::any(':version/:module/:controller/:function', '\app\:version\:module\controller\:controller@:function')->allowCrossDomain([
+    'Access-Control-Allow-Origin' => '*',
+    'Access-Control-Allow-Credentials' => 'true',
+]);
 
 
-Route::any('up', '\app\v1\file\controller\index@up')->allowCrossDomain();
-Route::any('upfull', '\app\v1\file\controller\index@upfull')->allowCrossDomain();
+Route::any('up', '\app\v1\file\controller\index@up')->allowCrossDomain([
+    'Access-Control-Allow-Origin' => '*',
+    'Access-Control-Allow-Credentials' => 'true',
+]);
+Route::any('upfull', '\app\v1\file\controller\index@upfull')->allowCrossDomain([
+    'Access-Control-Allow-Origin' => '*',
+    'Access-Control-Allow-Credentials' => 'true',
+]);
 
 Route::any(':any', function () {
     return \think\facade\Request::url();
-})->allowCrossDomain();
+})->allowCrossDomain([
+    'Access-Control-Allow-Origin' => '*',
+    'Access-Control-Allow-Credentials' => 'true',
+]);
 
 Route::any('', function () {
     return \think\facade\Request::url();
-})->allowCrossDomain();
+})->allowCrossDomain([
+    'Access-Control-Allow-Origin' => '*',
+    'Access-Control-Allow-Credentials' => 'true',
+]);
