@@ -5,6 +5,7 @@ namespace app\v1\file\controller;
 
 use app\v1\file\model\AttachmentModel;
 use app\v1\project\model\ProjectModel;
+use OSS\OssClient;
 use SendFile\SendFile;
 use think\facade\Validate;
 use think\Request;
@@ -73,7 +74,6 @@ class index
                 $sav = ($full ? $proc['url'] . '/' : '') . $fileName;
             }
         }
-
         if ($proc["type"] == "remote" || $proc["type"] == "all") {
             $sf = new SendFile();
             $ret = $sf->send('http://' . $proc["endpoint"] . '/up?token=' . $proc["bucket"], realpath('upload/' . $fileName), $file->getType(), $file->getFilename());
@@ -81,15 +81,13 @@ class index
             $sav = ($full ? $proc['url'] . '/' : '') . $json["data"];
         }
         if ($proc["type"] == "oss" || $proc["type"] == "all") {
-            $oss = new \OSS\AliyunOSS($proc);
-            $ret = $oss->uploadFile($proc['bucket'], $fileName, $fileName);
-            print($ret);
-            exit();
+            $ossclient = new OssClient($proc["accesskey"], $proc["accesssecret"], $proc["endpoint"]);
+//            $ret = $ossclient->uploadFile($proc['bucket'], $info->getRealPath(), $fileName);
             if ($proc['main_type'] == 'oss') {
                 $sav = ($full ? $proc['url'] . '/' : '') . $fileName;
             }
             if ($proc["type"] != "all") {
-//                unlink($file->getPathname());
+                unlink($file->getPathname());
             }
         }
 
@@ -191,7 +189,7 @@ class index
                 }
             }
             if ($proc["type"] == "oss" || $proc["type"] == "all") {
-                $oss = new \OSS\AliyunOSS($proc);
+                $oss = new \Alioss\AliyunOSS($proc);
                 $oss->uploadFile($proc['bucket'], $fileName, $file_path);
                 if ($proc['main_type'] == 'oss') {
                     $sav = ($full ? $proc['url'] . '/' : '') . $fileName;
