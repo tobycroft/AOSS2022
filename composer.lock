@@ -4,59 +4,8 @@
     "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
     "This file is @generated automatically"
   ],
-  "content-hash": "388f7f2e2aa0dfcd6bbd34f5cd37264c",
+  "content-hash": "50c830bca1bb48e078d7f8bbf3ea2f28",
   "packages": [
-    {
-      "name": "aliyuncs/oss-sdk-php",
-      "version": "v2.5.0",
-      "source": {
-        "type": "git",
-        "url": "https://github.com/aliyun/aliyun-oss-php-sdk.git",
-        "reference": "f0413667d765855eb0aaa728b596801464ffdb06"
-      },
-      "dist": {
-        "type": "zip",
-        "url": "https://api.github.com/repos/aliyun/aliyun-oss-php-sdk/zipball/f0413667d765855eb0aaa728b596801464ffdb06",
-        "reference": "f0413667d765855eb0aaa728b596801464ffdb06",
-        "shasum": "",
-        "mirrors": [
-          {
-            "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-            "preferred": true
-          }
-        ]
-      },
-      "require": {
-        "php": ">=5.3"
-      },
-      "require-dev": {
-        "phpunit/phpunit": "*",
-        "satooshi/php-coveralls": "*"
-      },
-      "type": "library",
-      "autoload": {
-        "psr-4": {
-          "OSS\\": "src/OSS"
-        }
-      },
-      "notification-url": "https://packagist.org/downloads/",
-      "license": [
-        "MIT"
-      ],
-      "authors": [
-        {
-          "name": "Aliyuncs",
-          "homepage": "http://www.aliyun.com"
-        }
-      ],
-      "description": "Aliyun OSS SDK for PHP",
-      "homepage": "http://www.aliyun.com/product/oss/",
-      "support": {
-        "issues": "https://github.com/aliyun/aliyun-oss-php-sdk/issues",
-        "source": "https://github.com/aliyun/aliyun-oss-php-sdk/tree/v2.5.0"
-      },
-      "time": "2022-05-13T07:41:28+00:00"
-    },
     {
       "name": "ezyang/htmlpurifier",
       "version": "v4.14.0",
@@ -153,16 +102,16 @@
         "league/flysystem-aws-s3-v3": "Allows you to use S3 storage with AWS SDK v3",
         "league/flysystem-azure": "Allows you to use Windows Azure Blob storage",
         "league/flysystem-cached-adapter": "Flysystem adapter decorator for metadata caching",
-                "league/flysystem-eventable-filesystem": "Allows you to use EventableFilesystem",
-                "league/flysystem-rackspace": "Allows you to use Rackspace Cloud Files",
-                "league/flysystem-sftp": "Allows you to use SFTP server storage via phpseclib",
-                "league/flysystem-webdav": "Allows you to use WebDAV storage",
-                "league/flysystem-ziparchive": "Allows you to use ZipArchive adapter",
-                "spatie/flysystem-dropbox": "Allows you to use Dropbox storage",
-                "srmklive/flysystem-dropbox-v2": "Allows you to use Dropbox storage for PHP 5 applications"
-            },
-            "type": "library",
-            "extra": {
+        "league/flysystem-eventable-filesystem": "Allows you to use EventableFilesystem",
+        "league/flysystem-rackspace": "Allows you to use Rackspace Cloud Files",
+        "league/flysystem-sftp": "Allows you to use SFTP server storage via phpseclib",
+        "league/flysystem-webdav": "Allows you to use WebDAV storage",
+        "league/flysystem-ziparchive": "Allows you to use ZipArchive adapter",
+        "spatie/flysystem-dropbox": "Allows you to use Dropbox storage",
+        "srmklive/flysystem-dropbox-v2": "Allows you to use Dropbox storage for PHP 5 applications"
+      },
+      "type": "library",
+      "extra": {
                 "branch-alias": {
                     "dev-master": "1.1-dev"
                 }
@@ -736,16 +685,16 @@
       },
       "autoload": {
         "psr-4": {
-                    "Psr\\Cache\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "PHP-FIG",
+          "Psr\\Cache\\": "src/"
+        }
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": [
+        "MIT"
+      ],
+      "authors": [
+        {
+          "name": "PHP-FIG",
                     "homepage": "http://www.php-fig.org/"
                 }
             ],
@@ -780,15 +729,15 @@
                     }
                 ]
             },
-            "require": {
-                "php": ">=7.4.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Psr\\Container\\": "src/"
-                }
-            },
+          "require": {
+            "php": ">=7.4.0"
+          },
+          "type": "library",
+          "autoload": {
+            "psr-4": {
+              "Psr\\Container\\": "src/"
+            }
+          },
           "notification-url": "https://packagist.org/downloads/",
           "license": [
             "MIT"
@@ -964,16 +913,16 @@
       },
       "autoload": {
         "psr-4": {
-                    "Psr\\Http\\Message\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "PHP-FIG",
+          "Psr\\Http\\Message\\": "src/"
+        }
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": [
+        "MIT"
+      ],
+      "authors": [
+        {
+          "name": "PHP-FIG",
                     "homepage": "http://www.php-fig.org/"
                 }
             ],
@@ -1072,16 +1021,16 @@
                 "php": ">=5.3.0"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Psr\\SimpleCache\\": "src/"
-                }
-            },
+          "extra": {
+            "branch-alias": {
+              "dev-master": "1.0.x-dev"
+            }
+          },
+          "autoload": {
+            "psr-4": {
+              "Psr\\SimpleCache\\": "src/"
+            }
+          },
           "notification-url": "https://packagist.org/downloads/",
           "license": [
             "MIT"
@@ -1225,16 +1174,16 @@
         "psr/log": "~1.0",
         "psr/simple-cache": "^1.0",
         "topthink/think-helper": "^3.1.1",
-                "topthink/think-orm": "^2.0"
-            },
-            "require-dev": {
-                "guzzlehttp/psr7": "^2.1.0",
-                "mikey179/vfsstream": "^1.6",
-                "mockery/mockery": "^1.2",
-                "phpunit/phpunit": "^7.0"
-            },
-            "type": "library",
-            "autoload": {
+        "topthink/think-orm": "^2.0"
+      },
+      "require-dev": {
+        "guzzlehttp/psr7": "^2.1.0",
+        "mikey179/vfsstream": "^1.6",
+        "mockery/mockery": "^1.2",
+        "phpunit/phpunit": "^7.0"
+      },
+      "type": "library",
+      "autoload": {
                 "files": [],
                 "psr-4": {
                     "think\\": "src/think/"
