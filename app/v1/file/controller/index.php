@@ -34,7 +34,8 @@ class index
         if (!$proc) {
             \Ret::fail('项目不可用');
         }
-
+        echo "123";
+        die();
         $file = $request->file('file');
         if (!$file) {
             \Ret::fail('file字段没有用文件提交');
