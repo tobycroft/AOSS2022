@@ -83,7 +83,7 @@ class index
         }
         if ($proc["type"] == "oss" || $proc["type"] == "all") {
             $oss = new \OSS\AliyunOSS($proc);
-            $oss->uploadFile($proc['bucket'], $fileName, 'upload/' . $this->token . "/" . $savePath, $hash . "." . $file->getOriginalExtension());
+            $oss->uploadFile($proc['bucket'], $fileName, 'upload/' . $this->token . "/" . $savePath . "/" . $hash . "." . $file->getOriginalExtension());
             if ($proc['main_type'] == 'oss') {
                 $sav = ($full ? $proc['url'] . '/' : '') . $fileName;
             }
