@@ -82,16 +82,16 @@ class index
         }
         if ($proc["type"] == "oss" || $proc["type"] == "all") {
             $oss = new \OSS\AliyunOSS($proc);
-            $oss->uploadFile($proc['bucket'], 'upload/' . $this->token . "/" . $savePath . "/" . $hash . "." . $file->getOriginalExtension(), $fileName);
+            $oss->uploadFile($proc['bucket'], "", $fileName);
             if ($proc['main_type'] == 'oss') {
                 $sav = ($full ? $proc['url'] . '/' : '') . $fileName;
             }
             if ($proc["type"] != "all") {
-                unlink($info->getPathname());
+//                unlink($file->getPathname());
             }
         }
 
-        AttachmentModel::create($file_info);
+//        AttachmentModel::create($file_info);
         if ($info) {
             if ($ue) {
                 \Ret::succ(['src' => $sav]);
