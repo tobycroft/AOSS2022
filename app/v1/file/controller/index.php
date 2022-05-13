@@ -121,8 +121,6 @@ class index
 
     public function upfull(Request $request)
     {
-        echo "123";
-        die();
         $file = $request->file('file');
         if ($file) {
             return $this->upload_file($request, 1);
