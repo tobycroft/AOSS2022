@@ -81,6 +81,11 @@ class index
             $json = json_decode($ret, 1);
             $sav = ($full ? $proc['url'] . '/' : '') . $json["data"];
         }
+        try {
+
+        } catch () {
+            
+        }
         if ($proc["type"] == "oss" || $proc["type"] == "all") {
             $oss = new \OSS\AliyunOSS($proc);
             $oss->uploadFile($proc['bucket'], 'upload/' . $this->token . "/" . $savePath . "/" . $hash . "." . $file->getOriginalExtension(), $fileName);
