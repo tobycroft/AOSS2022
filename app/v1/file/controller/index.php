@@ -29,21 +29,15 @@ class index
 
     public function upload_file(Request $request, $full = 0, $ue = 0)
     {
-        echo "123";
-        die();
         $token = $this->token;
         $proc = ProjectModel::api_find_token($token);
         if (!$proc) {
             \Ret::fail('项目不可用');
         }
-        echo "123";
-        die();
         $file = $request->file('file');
         if (!$file) {
             \Ret::fail('file字段没有用文件提交');
         }
-        echo "123";
-        die();
         $hash = $file->hash('md5');
         // 判断附件格式是否符合
         $file_name = $file->getFilename();
