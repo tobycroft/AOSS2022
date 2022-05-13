@@ -82,14 +82,14 @@ class index
             $sav = ($full ? $proc['url'] . '/' : '') . $json["data"];
         }
         if ($proc["type"] == "oss" || $proc["type"] == "all") {
-//            $oss = new \OSS\AliyunOSS($proc);
-//            $oss->uploadFile($proc['bucket'], 'upload/' . $this->token . "/" . $savePath . "/" . $hash . "." . $file->getOriginalExtension(), $fileName);
-//            if ($proc['main_type'] == 'oss') {
-//                $sav = ($full ? $proc['url'] . '/' : '') . $fileName;
-//            }
-//            if ($proc["type"] != "all") {
-//                unlink($info->getPathname());
-//            }
+            $oss = new \OSS\AliyunOSS($proc);
+            $oss->uploadFile($proc['bucket'], 'upload/' . $this->token . "/" . $savePath . "/" . $hash . "." . $file->getOriginalExtension(), $fileName);
+            if ($proc['main_type'] == 'oss') {
+                $sav = ($full ? $proc['url'] . '/' : '') . $fileName;
+            }
+            if ($proc["type"] != "all") {
+                unlink($info->getPathname());
+            }
         }
 
         AttachmentModel::create($file_info);
