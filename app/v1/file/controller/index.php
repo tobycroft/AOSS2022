@@ -57,7 +57,8 @@ class index
         }
 
         $savePath = date('Ymd', time());
-
+        echo "123";
+        die();
         $info = $file->move('upload/' . $this->token . "/" . $savePath, $hash . "." . $file->getOriginalExtension());
         $fileName = $this->token . "/" . $savePath . "/" . $info->getFilename();
         $file_info = [
@@ -80,11 +81,6 @@ class index
             $ret = $sf->send('http://' . $proc["endpoint"] . '/up?token=' . $proc["bucket"], realpath('upload/' . $fileName), $file->getType(), $file->getFilename());
             $json = json_decode($ret, 1);
             $sav = ($full ? $proc['url'] . '/' : '') . $json["data"];
-        }
-        try {
-
-        } catch () {
-            
         }
         if ($proc["type"] == "oss" || $proc["type"] == "all") {
             $oss = new \OSS\AliyunOSS($proc);
