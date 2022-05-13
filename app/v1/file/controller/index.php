@@ -81,11 +81,12 @@ class index
             $sav = ($full ? $proc['url'] . '/' : '') . $json["data"];
         }
         if ($proc["type"] == "oss" || $proc["type"] == "all") {
+            new OssClient();
             if ($proc['main_type'] == 'oss') {
                 $sav = ($full ? $proc['url'] . '/' : '') . $fileName;
             }
             if ($proc["type"] != "all") {
-                unlink($file->getPathname());
+                unlink($info->getPathname());
             }
         }
 

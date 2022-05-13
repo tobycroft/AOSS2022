@@ -4,8 +4,59 @@
     "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
     "This file is @generated automatically"
   ],
-  "content-hash": "50c830bca1bb48e078d7f8bbf3ea2f28",
+  "content-hash": "856f5848b1688b3397ae89fe7a84a247",
   "packages": [
+    {
+      "name": "aliyuncs/oss-sdk-php",
+      "version": "v2.5.0",
+      "source": {
+        "type": "git",
+        "url": "https://github.com/aliyun/aliyun-oss-php-sdk.git",
+        "reference": "f0413667d765855eb0aaa728b596801464ffdb06"
+      },
+      "dist": {
+        "type": "zip",
+        "url": "https://api.github.com/repos/aliyun/aliyun-oss-php-sdk/zipball/f0413667d765855eb0aaa728b596801464ffdb06",
+        "reference": "f0413667d765855eb0aaa728b596801464ffdb06",
+        "shasum": "",
+        "mirrors": [
+          {
+            "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+            "preferred": true
+          }
+        ]
+      },
+      "require": {
+        "php": ">=5.3"
+      },
+      "require-dev": {
+        "phpunit/phpunit": "*",
+        "satooshi/php-coveralls": "*"
+      },
+      "type": "library",
+      "autoload": {
+        "psr-4": {
+          "OSS\\": "src/OSS"
+        }
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": [
+        "MIT"
+      ],
+      "authors": [
+        {
+          "name": "Aliyuncs",
+          "homepage": "http://www.aliyun.com"
+        }
+      ],
+      "description": "Aliyun OSS SDK for PHP",
+      "homepage": "http://www.aliyun.com/product/oss/",
+      "support": {
+        "issues": "https://github.com/aliyun/aliyun-oss-php-sdk/issues",
+        "source": "https://github.com/aliyun/aliyun-oss-php-sdk/tree/v2.5.0"
+      },
+      "time": "2022-05-13T07:41:28+00:00"
+    },
     {
       "name": "ezyang/htmlpurifier",
       "version": "v4.14.0",
@@ -112,16 +163,16 @@
       },
       "type": "library",
       "extra": {
-                "branch-alias": {
-                    "dev-master": "1.1-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "League\\Flysystem\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
+        "branch-alias": {
+          "dev-master": "1.1-dev"
+        }
+      },
+      "autoload": {
+        "psr-4": {
+          "League\\Flysystem\\": "src/"
+        }
+      },
+      "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -695,16 +746,16 @@
       "authors": [
         {
           "name": "PHP-FIG",
-                    "homepage": "http://www.php-fig.org/"
-                }
-            ],
-            "description": "Common interface for caching libraries",
-            "keywords": [
-                "cache",
-                "psr",
-                "psr-6"
-            ],
-            "support": {
+          "homepage": "http://www.php-fig.org/"
+        }
+      ],
+      "description": "Common interface for caching libraries",
+      "keywords": [
+        "cache",
+        "psr",
+        "psr-6"
+      ],
+      "support": {
                 "source": "https://github.com/php-fig/cache/tree/master"
             },
             "time": "2016-08-06T20:24:11+00:00"
@@ -719,15 +770,15 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/container/zipball/513e0666f7216c7459170d56df27dfcefe1689ea",
-                "reference": "513e0666f7216c7459170d56df27dfcefe1689ea",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+              "url": "https://api.github.com/repos/php-fig/container/zipball/513e0666f7216c7459170d56df27dfcefe1689ea",
+              "reference": "513e0666f7216c7459170d56df27dfcefe1689ea",
+              "shasum": "",
+              "mirrors": [
+                {
+                  "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                  "preferred": true
+                }
+              ]
             },
           "require": {
             "php": ">=7.4.0"
@@ -923,16 +974,16 @@
       "authors": [
         {
           "name": "PHP-FIG",
-                    "homepage": "http://www.php-fig.org/"
-                }
-            ],
-            "description": "Common interface for HTTP messages",
-            "homepage": "https://github.com/php-fig/http-message",
-            "keywords": [
-                "http",
-                "http-message",
-                "psr",
-                "psr-7",
+          "homepage": "http://www.php-fig.org/"
+        }
+      ],
+      "description": "Common interface for HTTP messages",
+      "homepage": "https://github.com/php-fig/http-message",
+      "keywords": [
+        "http",
+        "http-message",
+        "psr",
+        "psr-7",
                 "request",
                 "response"
             ],
@@ -1011,16 +1062,16 @@
                 "reference": "408d5eafb83c57f6365a3ca330ff23aa4a5fa39b",
                 "shasum": "",
                 "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
+                  {
+                    "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                    "preferred": true
+                  }
                 ]
             },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "type": "library",
+          "require": {
+            "php": ">=5.3.0"
+          },
+          "type": "library",
           "extra": {
             "branch-alias": {
               "dev-master": "1.0.x-dev"
@@ -1184,16 +1235,16 @@
       },
       "type": "library",
       "autoload": {
-                "files": [],
-                "psr-4": {
-                    "think\\": "src/think/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Apache-2.0"
-            ],
-            "authors": [
+        "files": [],
+        "psr-4": {
+          "think\\": "src/think/"
+        }
+      },
+      "notification-url": "https://packagist.org/downloads/",
+      "license": [
+        "Apache-2.0"
+      ],
+      "authors": [
                 {
                     "name": "liu21st",
                     "email": "liu21st@gmail.com"
@@ -1661,7 +1712,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-      "php": ">=7.2.5"
+      "php": ">=8.1.5"
     },
     "platform-dev": [],
     "plugin-api-version": "2.3.0"
