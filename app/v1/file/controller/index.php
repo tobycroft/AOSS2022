@@ -39,6 +39,8 @@ class index
         if (!$file) {
             \Ret::fail('file字段没有用文件提交');
         }
+        echo "123";
+        die();
         $hash = $file->hash('md5');
         // 判断附件格式是否符合
         $file_name = $file->getFilename();
@@ -57,8 +59,7 @@ class index
         }
 
         $savePath = date('Ymd', time());
-        echo "123";
-        die();
+
         $info = $file->move('upload/' . $this->token . "/" . $savePath, $hash . "." . $file->getOriginalExtension());
         $fileName = $this->token . "/" . $savePath . "/" . $info->getFilename();
         $file_info = [
