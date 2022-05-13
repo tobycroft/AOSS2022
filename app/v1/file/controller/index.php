@@ -29,6 +29,8 @@ class index
 
     public function upload_file(Request $request, $full = 0, $ue = 0)
     {
+        echo "123";
+        die();
         $token = $this->token;
         $proc = ProjectModel::api_find_token($token);
         if (!$proc) {
