@@ -81,8 +81,6 @@ class index
             $sav = ($full ? $proc['url'] . '/' : '') . $json["data"];
         }
         if ($proc["type"] == "oss" || $proc["type"] == "all") {
-//            $ossclient = new OssClient($proc["accesskey"], $proc["accesssecret"], $proc["endpoint"]);
-//            $ret = $ossclient->uploadFile($proc['bucket'], $info->getRealPath(), $fileName);
             if ($proc['main_type'] == 'oss') {
                 $sav = ($full ? $proc['url'] . '/' : '') . $fileName;
             }
