@@ -88,7 +88,7 @@ class index
                 $sav = ($full ? $proc['url'] . '/' : '') . $fileName;
             }
             if ($proc["type"] != "all") {
-                unlink($info->getPathname());
+                unlink($file->getPathname());
             }
         }
 
